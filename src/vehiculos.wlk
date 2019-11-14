@@ -10,3 +10,7 @@ class Control(){
 }
 class ControlInteriores inherits Control(alcance = 500)
 class ControlExteriores inherits Control()
+
+class Auto inherits Vehiculo(){
+	override method velocidadMaxima()=100
+}
