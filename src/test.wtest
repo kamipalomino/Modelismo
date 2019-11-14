@@ -1,0 +1,22 @@
+test "los autos tienen una velocidad maxima de 100km/h" {
+	const ferrari = new Auto(
+		cilindrada = 2,
+		control= new ControlInteriores()		
+	)
+	assert.equals(ferrari.velocidadMaxima(), 100)
+}
+test "un helicóptero pequeño con alcance de 1000cm puede andar 4km/h"{
+	const soyUnHelicopteroPequenio = new Helicoptero(control = new ControlInteriores(), cilindrada = 1)
+		assert.equals(soyUnHelicopteroPequenio.velocidadMaxima(),4)
+}
+test "un helicóptero grande con una cilindrada de tres puede anda 60km/h"{
+	const helicopteroGrande = new Helicoptero(cilindrada = 3, control = new ControlExteriores())
+	assert.equals(helicopteroGrande.velocidadMaxima(),60)
+}
+
+test "un avión con alcance de 100000, anda a 102km/h "{
+	const jeyjey = new Avion( cilindrada = 4, control = new ControlExteriores(alcance = 100000))
+	assert.equals(jeyjey.velocidadMaxima(),102)
+}
+
+
