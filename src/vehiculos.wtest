@@ -1,3 +1,6 @@
+import vehiculos.*
+
+
 test "los autos tienen una velocidad maxima de 100km/h" {
 	const ferrari = new Auto(
 		cilindrada = 2,
