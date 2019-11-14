@@ -1,6 +1,5 @@
 import vehiculos.*
 
-
 test "los autos tienen una velocidad maxima de 100km/h" {
 	const ferrari = new Auto(
 		cilindrada = 2,
@@ -8,12 +7,13 @@ test "los autos tienen una velocidad maxima de 100km/h" {
 	)
 	assert.equals(ferrari.velocidadMaxima(), 100)
 }
-test "un helicóptero pequeño con alcance de 1000cm puede andar 4km/h"{
-	const soyUnHelicopteroPequenio = new Helicoptero(control = new ControlInteriores(), cilindrada = 1)
+test "un helicóptero pequeño con alcance de 500cm puede andar 4km/h"{
+	const soyUnHelicopteroPequenio = new HelicopteroPequenio(control = new  ControlInteriores(), cilindrada = 1)
 		assert.equals(soyUnHelicopteroPequenio.velocidadMaxima(),4)
+		assert.equals(soyUnHelicopteroPequenio.alcance(),500)
 }
 test "un helicóptero grande con una cilindrada de tres puede anda 60km/h"{
-	const helicopteroGrande = new Helicoptero(cilindrada = 3, control = new ControlExteriores())
+	const helicopteroGrande = new HelicopteroGrande(cilindrada = 3, control = new ControlExteriores())
 	assert.equals(helicopteroGrande.velocidadMaxima(),60)
 }
 
@@ -22,4 +22,9 @@ test "un avión con alcance de 100000, anda a 102km/h "{
 	assert.equals(jeyjey.velocidadMaxima(),102)
 }
 
-
+test "un auto cambia de control remoto por uno de exteriores"{
+	const autoBipolar = new Auto(cilindrada = 2, control=new ControlInteriores())
+	assert.equals(autoBipolar.alcance(),500)
+	autoBipolar.control(new ControlExteriores(alcance = 2000))
+	assert.equals(autoBipolar.alcance(), 2000)
+}
